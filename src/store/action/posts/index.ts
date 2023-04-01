@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import postService from "../../../services/postServices";
-import { NewPostProps, PostProps } from "../../../interface";
+import { NewPostProps } from "../../../interface";
 
 export const GetPosts = createAsyncThunk("posts/get-all", async () => {
      const data = await postService.GetAllPosts();

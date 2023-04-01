@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { useDispatch, useSelector } from "react-redux";
-import { DeleteSpecificPost, EditSpecificPost, GetPosts, GetSpecificPost } from "../../action";
+import { EditSpecificPost, GetPosts, GetSpecificPost } from "../../action";
 
 const PostSlice = createSlice({
      name: "posts",
@@ -50,7 +50,7 @@ const PostSlice = createSlice({
 });
 
 export const PostReducer = PostSlice.reducer;
-export const {} = PostSlice.actions;
+// export const {} = PostSlice.actions;
 export const usePostSelector = () =>
      useSelector((state: any) => {
           return state.posts;

@@ -26,7 +26,7 @@ const CommentSlice = createSlice({
 });
 
 export const CommentReducer = CommentSlice.reducer;
-export const {} = CommentSlice.actions;
+// export const {} = CommentSlice.actions;
 export const useCommentSelector = () =>
      useSelector((state: any) => {
           return state.comment;
