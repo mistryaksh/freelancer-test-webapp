@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { Route, Routes } from "react-router-dom";
+import { EditPostPage, Home, PostDetails } from "./pages";
+import { GetPosts } from "./store/action";
+import { AppDispatch } from "./store";
+import { useDispatch } from "react-redux";
+
+export default function App() {
+     const dispatch = useDispatch<AppDispatch>();
+     useEffect(() => {
+          dispatch(GetPosts());
+     }, []);
+
+     return (
+          <Routes>
+               <Route element={<Home />} path="/" />
+               <Route element={<PostDetails />} path="/posts" />
+               <Route element={<EditPostPage />} path="/post" />
+          </Routes>
+     );
 }
-
-export default App;
